@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const API_KEY = '3d82d368'; // Ваш ключ до OMDb API
+    const API_KEY = '3d82d368'; 
     const BASE_URL = 'https://www.omdbapi.com/';
-    const FILMS_PER_PAGE = 10; // Кількість фільмів на сторінку
+    const FILMS_PER_PAGE = 10; 
     const filmContainer = document.getElementById('filmContainer');
     const paginationContainer = document.getElementById('paginationContainer');
     const filmImage = document.getElementById('filmImage');
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const films = await fetchFilmsByPage(currentSearchQuery, page);
 
         if (films.length > 0) {
-            // Оновлюємо правий блок першим фільмом
+        
             const firstFilmDetails = await fetchFilmDetails(films[0].imdbID);
             updateFilmDetails(firstFilmDetails);
         }
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Ініціалізація з початковим запитом
-    currentSearchQuery = 'Wars'; // Початковий запит
+
+    currentSearchQuery = 'Wars'; 
     displayFilms(currentPage);
 });
