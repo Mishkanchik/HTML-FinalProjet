@@ -33,8 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
         filmContainer.innerHTML = ''; 
         const films = await fetchFilmsByPage(currentSearchQuery, page);
 
+        if (films.length > 0) {
+            // Оновлюємо правий блок першим фільмом
+            const firstFilmDetails = await fetchFilmDetails(films[0].imdbID);
+            updateFilmDetails(firstFilmDetails);
+        }
+
         for (const film of films) {
-            const details = await fetchFilmDetails(film.imdbID); 
+            const details = await fetchFilmDetails(film.imdbID);
 
             const filmDiv = document.createElement('div');
             filmDiv.className = 'film';
