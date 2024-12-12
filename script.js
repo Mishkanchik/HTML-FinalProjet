@@ -1,7 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const loginRegisterDiv = document.querySelector('.login-register');
+
+    if (currentUser) {
+        loginRegisterDiv.innerHTML = `
+            <span>Привіт, ${currentUser.username}</span>
+            <button id="logoutButton">Вийти</button>
+        `;
+        document.getElementById('logoutButton').addEventListener('click', () => {
+            localStorage.removeItem('currentUser');
+            window.location.reload();
+        });
+    } else {
+        loginRegisterDiv.innerHTML = `
+            <button class="login" id="login">Login</button>
+            <button class="register" id="register">Register</button>
+        `;
+
+        document.getElementById('login').addEventListener('click', () => {
+            window.location.href = '/login';
+        });
+
+        document.getElementById('register').addEventListener('click', () => {
+            window.location.href = '/register';
+        });
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
     const API_KEY = '3d82d368'; 
     const BASE_URL = 'https://www.omdbapi.com/';
-    const FILMS_PER_PAGE = 10; 
+    const FILMS_PER_PAGE = 10;
     const filmContainer = document.getElementById('filmContainer');
     const paginationContainer = document.getElementById('paginationContainer');
     const filmImage = document.getElementById('filmImage');
@@ -30,11 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const displayFilms = async (page) => {
-        filmContainer.innerHTML = ''; 
+        filmContainer.innerHTML = '';
         const films = await fetchFilmsByPage(currentSearchQuery, page);
 
         if (films.length > 0) {
-        
             const firstFilmDetails = await fetchFilmDetails(films[0].imdbID);
             updateFilmDetails(firstFilmDetails);
         }
@@ -142,7 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
             searchFilms();
         }
     });
-
 
     currentSearchQuery = 'Wars'; 
     displayFilms(currentPage);
