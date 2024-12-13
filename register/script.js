@@ -38,5 +38,5 @@ document.getElementById('registrationForm').addEventListener('submit', function(
     document.getElementById('registrationForm').reset();
 
 
-    window.location.replace('/login/index.html');
+    window.location.replace('login/');
 });
