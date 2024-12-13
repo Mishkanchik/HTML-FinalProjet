@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         document.getElementById('login').addEventListener('click', () => {
-            window.location.href = 'login/';
+            window.location.href = '/HTML-FinalProjet/login/';
         });
 
         document.getElementById('register').addEventListener('click', () => {
-            window.location.href = 'register/';
+            window.location.href = '/HTML-FinalProjet/register/';
         });
     }
 });

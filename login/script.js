@@ -19,7 +19,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         localStorage.setItem('currentUser', JSON.stringify(user));
 
        
-        window.location.replace('/');
+        window.location.replace('/HTML-FinalProjet/');
     } else {
         alert('Неправильний логін або пароль!');
     }
