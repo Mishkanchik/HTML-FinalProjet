@@ -195,8 +195,6 @@ body{
     grid-template-columns: repeat(3,30%);
     justify-content: space-around;
     gap: 20px;
-    height: 1653px;
-  
 
 }
 .film{
@@ -360,6 +358,7 @@ body{
     .films {
         grid-template-columns: repeat(2, 48%); 
         gap: 10px;
+      
     }
 
     .film {
@@ -397,7 +396,9 @@ body{
     }
 
     .films {
-        grid-template-columns: 100%;
+        grid-template-columns: repeat(2, 48%); 
+        gap: 10px; 
+     
     }
 
     .film img {
