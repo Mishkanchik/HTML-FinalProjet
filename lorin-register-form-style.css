@@ -14,7 +14,9 @@ body{
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: normal;
-    padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 h2{
@@ -65,10 +67,22 @@ h2{
 }
 
 
+.main-route-button{
+    margin: 20px  ;
+    width: 100px;
+    height: 40px;
+    background-color: #8b4799;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
 
 
-
-
+.main-route-button:hover{
+    background-color: #5b3263;
+}
 
 
 

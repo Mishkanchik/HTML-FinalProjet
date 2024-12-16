@@ -24,3 +24,11 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         alert('Неправильний логін або пароль!');
     }
 });
+
+
+document.getElementById('main-route-button').addEventListener('click', () => {
+
+    window.location('/HTML-FinalProjet/')
+
+
+})
