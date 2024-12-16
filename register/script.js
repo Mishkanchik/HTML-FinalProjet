@@ -1,3 +1,13 @@
+
+
+document.getElementById('main-route-button').addEventListener('click', () => {
+
+    window.location.replace('/HTML-FinalProjet/')
+
+
+})
+
+
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -41,10 +51,3 @@ document.getElementById('registrationForm').addEventListener('submit', function(
     window.location.replace('/HTML-FinalProjet/login/');
 });
 
-
-document.getElementById('main-route-button').addEventListener('click', () => {
-
-    window.location('/HTML-FinalProjet/')
-
-
-})
