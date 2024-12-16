@@ -195,6 +195,7 @@ body{
     grid-template-columns: repeat(3,30%);
     justify-content: space-around;
     gap: 20px;
+    height: 1653px;
   
 
 }
